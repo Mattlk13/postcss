@@ -55,8 +55,8 @@ Or enable plugins directly in CSS using [`postcss-use`]:
 [`postcss-utilities`]:  https://github.com/ismamz/postcss-utilities
 [`postcss-hamster`]:    https://github.com/h0tc0d3/postcss-hamster
 [`stylelint`]:          https://github.com/stylelint/stylelint
-[`rucksack`]:           http://simplaio.github.io/rucksack
-[`cssnano`]:            http://cssnano.co/
+[`rucksack`]:           https://github.com/seaneking/rucksack
+[`cssnano`]:            https://cssnano.co/
 [`level4`]:             https://github.com/stephenway/level4
 [`precss`]:             https://github.com/jonathantneal/precss
 [`oldie`]:              https://github.com/jonathantneal/oldie
@@ -218,7 +218,6 @@ for targeting all button elements.
   selector.
 * [`csstyle`] adds components workflow to your styles.
 * [`postcss-percentage`] support Sass-like `percentage()` function.
-* [`postcss-state-selector`] write CSS based on component's state.
 
 See also [`precss`] plugins pack to add them by one line of code.
 
@@ -329,7 +328,7 @@ loosely resembles the original.
 * [`postcss-import`] inlines the stylesheets referred to by `@import` rules.
 * [`postcss-nested-import`] inlines stylesheets referred to by `@import` rules inside nested rule blocks.
 * [`postcss-partial-import`] inlines standard imports and Sass-like partials.
-* [`postcss-reference`] emulates Less’s [`@import (reference)`].
+* [`postcss-reference`] emulates Less’s `@import`.
 * [`postcss-remove-root`] removes all instances of `:root` from a stylesheet.
 * [`postcss-single-charset`] ensures that there is one and only one
   `@charset` rule at the top of file.
@@ -347,7 +346,6 @@ loosely resembles the original.
 
 See also plugins in modular minifier [`cssnano`].
 
-[@import (reference)]: http://lesscss.org/features/#import-options-reference
 [SVGO]: https://github.com/svg/svgo
 
 
@@ -418,12 +416,14 @@ See also plugins in modular minifier [`cssnano`].
 * [`postcss-eol`] replaces EOL of files.
 * [`postcss-extract-value`] extracts values from css properties and puts them into variables.
 * [`postcss-fakeid`] transforms `#foo` IDs to attribute selectors `[id="foo"]`.
-* [`postcss-filter-stream`] blacklist files / folders that you don't want
+* [`postcss-filter-stream`] blacklist files / folders that you don’t want
   to process with a PostCSS plugin.
 * [`postcss-flexbox`] easy way to understand and start using CSS3 Flexbox.
+* [`postcss-flexbox-reset`] resets Flexbox to avoid issues in responsive layouts.
 * [`postcss-flexboxfixer`] unprefixes `-webkit-` only flexbox in legacy CSS.
 * [`postcss-flexbugs-fixes`] fixes some of known [flexbox bugs].
 * [`postcss-gradientfixer`] unprefixes `-webkit-` only gradients in legacy CSS.
+* [`postcss-grid-reset`] resets CSS Grid to avoid issues in responsive layouts.
 * [`postcss-hash`] replaces output file names with hash algorithms
   for cache busting.
 * [`postcss-ie8`] strips out unsupported properties and media queries for IE8.
@@ -617,7 +617,7 @@ See also plugins in modular minifier [`cssnano`].
 [`postcss-css-variables`]:                https://github.com/MadLittleMods/postcss-css-variables
 [`postcss-discard-empty`]:                https://github.com/ben-eb/postcss-discard-empty
 [`postcss-extract-value`]:                https://github.com/lutien/postcss-extract-value
-[`postcss-filter-stream`]:                https://github.com/tsm91/postcss-filter-stream
+[`postcss-filter-stream`]:                https://www.npmjs.com/package/postcss-filter-stream
 [`postcss-gradientfixer`]:                https://github.com/hallvors/postcss-gradientfixer
 [`postcss-image-inliner`]:                https://github.com/bezoerb/postcss-image-inliner
 [`postcss-modular-scale`]:                https://github.com/kristoferjoseph/postcss-modular-scale
@@ -817,7 +817,6 @@ See also plugins in modular minifier [`cssnano`].
 [`postcss-percentage`]:                   https://github.com/creeperyang/postcss-percentage
 [`postcss-start-to-end`]:                 https://github.com/sandrina-p/postcss-start-to-end
 [`postcss-autocorrect`]:                  https://github.com/DimitrisNL/postcss-autocorrect
-[`postcss-state-selector`]:               https://github.com/binjospookie/postcss-state-selector
 [`postcss-html-filter`]:                  https://github.com/mapbox/postcss-html-filter
 [`postcss-hash`]:                         https://github.com/dacodekid/postcss-hash
 [`postcss-light-text`]:                   https://github.com/jdsteinbach/postcss-light-text
@@ -847,3 +846,5 @@ See also plugins in modular minifier [`cssnano`].
 [`postcss-pseudo-is`]:                    https://github.com/IlyaUpyackovich/postcss-pseudo-is
 [`postcss-deep-scopable`]:                https://github.com/litt1e-p/postcss-deep-scopable
 [`postcss-deadcss`]:                https://github.com/DenyVeyten/postcss-deadcss
+[`postcss-flexbox-reset`]:                 https://github.com/AndrejGajdos/postcss-flexbox-reset
+[`postcss-grid-reset`]:                    https://github.com/AndrejGajdos/postcss-grid-reset

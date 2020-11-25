@@ -1,4 +1,4 @@
-import { PluginCreator } from '../lib/postcss.js'
+import postcss, { Result, PluginCreator, SourceMap } from '../lib/postcss.js'
 
 const plugin: PluginCreator<string> = prop => {
   return {
@@ -13,5 +13,13 @@ const plugin: PluginCreator<string> = prop => {
 }
 
 plugin.postcss = true
+
+const processResult: Promise<Result> | Result = postcss([
+  plugin
+]).process('h1{color: black;}', { from: undefined })
+
+processResult.then((result: Result) => {
+  console.log(result.css)
+})
 
 export default plugin

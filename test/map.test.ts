@@ -1,6 +1,6 @@
 import { SourceMapConsumer, SourceMapGenerator } from 'source-map'
 import { removeSync, outputFileSync } from 'fs-extra'
-import { join, resolve } from 'path'
+import { join, resolve, parse } from 'path'
 import { existsSync } from 'fs'
 
 import postcss, { SourceMap, Rule, Root } from '../lib/postcss.js'
@@ -570,9 +570,11 @@ it('uses absolute path on request', () => {
     to: '/dir/b.css',
     map: { inline: false, absolute: true }
   })
-  expect(result.map.toJSON().sources).toEqual([
-    process.platform === 'win32' ? 'file:///C:/dir/a.css' : 'file:///dir/a.css'
-  ])
+  let root = '/'
+  if (process.platform === 'win32') {
+    root = '/' + parse(process.cwd()).root.replace(/\\/g, '/')
+  }
+  expect(result.map.toJSON().sources).toEqual([`file://${root}dir/a.css`])
 })
 
 it('preserves absolute urls in sources from previous map', () => {
